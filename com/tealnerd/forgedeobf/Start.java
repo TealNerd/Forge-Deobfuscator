@@ -36,15 +36,11 @@ public class Start {
 	static ArrayList<String> readFile(File file) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
         ArrayList<String> lines = new ArrayList<String>();
-        try {
-            String line = br.readLine();
-            while (line != null) {
-                lines.add(line);
-                line = br.readLine();
-            }
-        } finally {
-            br.close();
+        String line = "";
+        while((line = br.readLine()) != null) {
+        	lines.add(line);
         }
+        br.close()
         return lines;
     }
 	
